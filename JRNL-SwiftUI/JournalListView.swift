@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct JournalListView: View {
     @State private var isShowAddJournalView = false
+    
+    @Query(sort:\JournalEntry.date) var journalEntries: [JournalEntry]
+    
     var body: some View {
         NavigationStack {
-            List {
-                
+            List(journalEntries) { journalEntry in
+                Text(journalEntry.entryTitle)
             }
             .navigationTitle("Journal List")
             .navigationBarTitleDisplayMode(.inline)
@@ -32,4 +36,5 @@ struct JournalListView: View {
 
 #Preview {
     JournalListView()
+        .modelContainer(for: JournalEntry.self, inMemory: true)
 }
