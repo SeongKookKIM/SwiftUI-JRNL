@@ -13,6 +13,7 @@
 		0481D8DF2C05C73000B13633 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0481D8DE2C05C73000B13633 /* Preview Assets.xcassets */; };
 		0481D8E62C05C78C00B13633 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481D8E52C05C78C00B13633 /* MapView.swift */; };
 		0481D8E82C05C79800B13633 /* JournalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481D8E72C05C79800B13633 /* JournalListView.swift */; };
+		0481D8EA2C05CA0400B13633 /* AddJournalEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481D8E92C05CA0400B13633 /* AddJournalEntryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		0481D8DE2C05C73000B13633 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0481D8E52C05C78C00B13633 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		0481D8E72C05C79800B13633 /* JournalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListView.swift; sourceTree = "<group>"; };
+		0481D8E92C05CA0400B13633 /* AddJournalEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalEntryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				0481D8D72C05C72E00B13633 /* JRNL_SwiftUIApp.swift */,
 				0481D8D92C05C72E00B13633 /* ContentView.swift */,
 				0481D8E72C05C79800B13633 /* JournalListView.swift */,
+				0481D8E92C05CA0400B13633 /* AddJournalEntryView.swift */,
 				0481D8E52C05C78C00B13633 /* MapView.swift */,
 				0481D8DB2C05C73000B13633 /* Assets.xcassets */,
 				0481D8DD2C05C73000B13633 /* Preview Content */,
@@ -146,6 +149,7 @@
 				0481D8DA2C05C72E00B13633 /* ContentView.swift in Sources */,
 				0481D8E62C05C78C00B13633 /* MapView.swift in Sources */,
 				0481D8E82C05C79800B13633 /* JournalListView.swift in Sources */,
+				0481D8EA2C05CA0400B13633 /* AddJournalEntryView.swift in Sources */,
 				0481D8D82C05C72E00B13633 /* JRNL_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
