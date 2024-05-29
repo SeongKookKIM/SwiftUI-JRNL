@@ -14,6 +14,7 @@ struct MapUIView: UIViewRepresentable {
     @Binding var region: MKCoordinateRegion
     @Binding var annotations: [MKAnnotation]
     @Binding var isDetailViewActive: Bool
+    @Binding var selectedAnnotation: JournalMapAnnotation?
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
@@ -57,8 +58,8 @@ struct MapUIView: UIViewRepresentable {
         func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
             if let journalAnnotation = view.annotation as? JournalMapAnnotation {
                 print(journalAnnotation.journal.entryTitle)
-                
-                
+                parent.selectedAnnotation = journalAnnotation
+                parent.isDetailViewActive = true
             }
         }
     
@@ -74,13 +75,15 @@ struct MapView: View {
     @State private var annotations: [MKAnnotation] = []
     @State private var isDetailViewActive = false
     
+    @State private var selectedAnnotation: JournalMapAnnotation?
+    
     @StateObject private var locationManager = LocationManager()
     @Query(sort: \JournalEntry.date) var journalEntries: [JournalEntry]
     
     var body: some View {
         NavigationStack {
             MapUIView(region: $region, annotations: $annotations,
-                      isDetailViewActive: $isDetailViewActive)
+                      isDetailViewActive: $isDetailViewActive, selectedAnnotation: $selectedAnnotation)
                 .onAppear {
                     locationManager.requestLocation()
                 }
@@ -93,6 +96,12 @@ struct MapView: View {
                 }
                 .navigationTitle("Map")
                 .navigationBarTitleDisplayMode(.inline)
+                .navigationDestination(isPresented: $isDetailViewActive) {
+                    if let journalEntry = selectedAnnotation?.journal{
+                        JournalEntryDetailView(journalEntry: journalEntry)
+                    }
+                }
+
         }
     }
 }
