@@ -16,7 +16,13 @@ struct JournalListView: View {
     var body: some View {
         NavigationStack {
             List(journalEntries) { journalEntry in
-                JournalCell(journalEntry: journalEntry)
+                NavigationLink(value: journalEntry) {
+                    JournalCell(journalEntry: journalEntry)
+                }
+                .navigationDestination(for: JournalEntry.self) {
+                    journalEntry in
+                    JournalEntryDetailView(journalEntry: journalEntry)
+                }
             }
             .navigationTitle("Journal List")
             .navigationBarTitleDisplayMode(.inline)
