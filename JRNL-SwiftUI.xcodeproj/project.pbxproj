@@ -15,6 +15,8 @@
 		0481D8E82C05C79800B13633 /* JournalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481D8E72C05C79800B13633 /* JournalListView.swift */; };
 		0481D8EA2C05CA0400B13633 /* AddJournalEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481D8E92C05CA0400B13633 /* AddJournalEntryView.swift */; };
 		0481D8EC2C05CDAB00B13633 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481D8EB2C05CDAB00B13633 /* JournalEntry.swift */; };
+		0481D8F62C06AFE000B13633 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481D8F52C06AFE000B13633 /* RatingView.swift */; };
+		0481D8F82C06B00300B13633 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481D8F72C06B00300B13633 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		0481D8E72C05C79800B13633 /* JournalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListView.swift; sourceTree = "<group>"; };
 		0481D8E92C05CA0400B13633 /* AddJournalEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalEntryView.swift; sourceTree = "<group>"; };
 		0481D8EB2C05CDAB00B13633 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		0481D8F52C06AFE000B13633 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		0481D8F72C06B00300B13633 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 		0481D8D62C05C72E00B13633 /* JRNL-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				0481D8F42C06AFCA00B13633 /* Coordinates */,
+				0481D8F32C06AFB400B13633 /* View */,
 				0481D8D72C05C72E00B13633 /* JRNL_SwiftUIApp.swift */,
 				0481D8EB2C05CDAB00B13633 /* JournalEntry.swift */,
 				0481D8D92C05C72E00B13633 /* ContentView.swift */,
@@ -77,6 +83,22 @@
 				0481D8DE2C05C73000B13633 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0481D8F32C06AFB400B13633 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0481D8F52C06AFE000B13633 /* RatingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0481D8F42C06AFCA00B13633 /* Coordinates */ = {
+			isa = PBXGroup;
+			children = (
+				0481D8F72C06B00300B13633 /* LocationManager.swift */,
+			);
+			path = Coordinates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,8 +175,10 @@
 				0481D8DA2C05C72E00B13633 /* ContentView.swift in Sources */,
 				0481D8E62C05C78C00B13633 /* MapView.swift in Sources */,
 				0481D8E82C05C79800B13633 /* JournalListView.swift in Sources */,
+				0481D8F82C06B00300B13633 /* LocationManager.swift in Sources */,
 				0481D8EA2C05CA0400B13633 /* AddJournalEntryView.swift in Sources */,
 				0481D8D82C05C72E00B13633 /* JRNL_SwiftUIApp.swift in Sources */,
+				0481D8F62C06AFE000B13633 /* RatingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,8 +314,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"JRNL-SwiftUI/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = .;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = .;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = .;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = .;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -320,8 +346,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"JRNL-SwiftUI/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = .;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = .;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = .;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = .;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

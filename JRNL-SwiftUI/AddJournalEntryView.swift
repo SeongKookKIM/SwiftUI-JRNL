@@ -8,50 +8,6 @@
 import SwiftUI
 import CoreLocation //위치정보
 
-struct RatingView: View {
-    @Binding var rating: Int
-    var body: some View {
-        HStack {
-            ForEach(0..<5) { index in
-                Image(systemName: index < rating ? "star.fill" : "star" )
-                    .foregroundStyle(.blue)
-                    .onTapGesture {
-                        rating = index + 1
-                    }
-            }
-
-        }
-        .frame(maxWidth: .infinity, alignment: .center)
-    }
-}
-
-class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-    private let manager = CLLocationManager()
-    @Published var location: CLLocation?
-    
-    override init() {
-        super.init()
-        manager.delegate = self
-        manager.requestAlwaysAuthorization()
-        manager.desiredAccuracy = kCLLocationAccuracyKilometer
-    }
-    
-    func requestLocation() {
-        manager.requestLocation()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            self.location = location
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
-        print("Failed: \(error.localizedDescription)")
-    }
-}
-
-
 struct AddJournalEntryView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var modelContext
