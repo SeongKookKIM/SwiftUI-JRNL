@@ -20,6 +20,7 @@
 		0481D8FA2C06B99A00B13633 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481D8F92C06B99A00B13633 /* ImagePicker.swift */; };
 		0481D8FC2C06B9FF00B13633 /* JournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481D8FB2C06B9FF00B13633 /* JournalCell.swift */; };
 		0481D8FE2C06BDAC00B13633 /* JournalEntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481D8FD2C06BDAC00B13633 /* JournalEntryDetailView.swift */; };
+		0481D9012C06CE6A00B13633 /* JournalMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9002C06CE6A00B13633 /* JournalMapAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		0481D8F92C06B99A00B13633 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0481D8FB2C06B9FF00B13633 /* JournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCell.swift; sourceTree = "<group>"; };
 		0481D8FD2C06BDAC00B13633 /* JournalEntryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryDetailView.swift; sourceTree = "<group>"; };
+		0481D9002C06CE6A00B13633 /* JournalMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalMapAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +71,10 @@
 		0481D8D62C05C72E00B13633 /* JRNL-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				0481D8FF2C06CE5600B13633 /* Model */,
 				0481D8F42C06AFCA00B13633 /* Coordinates */,
 				0481D8F32C06AFB400B13633 /* View */,
 				0481D8D72C05C72E00B13633 /* JRNL_SwiftUIApp.swift */,
-				0481D8EB2C05CDAB00B13633 /* JournalEntry.swift */,
 				0481D8E72C05C79800B13633 /* JournalListView.swift */,
 				0481D8E92C05CA0400B13633 /* AddJournalEntryView.swift */,
 				0481D8FD2C06BDAC00B13633 /* JournalEntryDetailView.swift */,
@@ -108,6 +110,15 @@
 				0481D8F92C06B99A00B13633 /* ImagePicker.swift */,
 			);
 			path = Coordinates;
+			sourceTree = "<group>";
+		};
+		0481D8FF2C06CE5600B13633 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0481D8EB2C05CDAB00B13633 /* JournalEntry.swift */,
+				0481D9002C06CE6A00B13633 /* JournalMapAnnotation.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0481D8EC2C05CDAB00B13633 /* JournalEntry.swift in Sources */,
+				0481D9012C06CE6A00B13633 /* JournalMapAnnotation.swift in Sources */,
 				0481D8DA2C05C72E00B13633 /* ContentView.swift in Sources */,
 				0481D8E62C05C78C00B13633 /* MapView.swift in Sources */,
 				0481D8FC2C06B9FF00B13633 /* JournalCell.swift in Sources */,
