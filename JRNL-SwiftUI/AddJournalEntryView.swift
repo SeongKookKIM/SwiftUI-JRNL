@@ -8,6 +8,8 @@
 import SwiftUI
 import CoreLocation //위치정보
 
+
+
 struct AddJournalEntryView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var modelContext
@@ -18,6 +20,8 @@ struct AddJournalEntryView: View {
     @State private var currentLocation: CLLocation?
     @State private var entryTitle = ""
     @State private var entryBody = ""
+    @State private var isShowPicker = false
+    @State private var uiImage: UIImage?
     
     @StateObject private var locationManager = LocationManager()
     
@@ -51,7 +55,25 @@ struct AddJournalEntryView: View {
                     TextEditor(text: $entryBody)
                 }
                 Section(header: Text("Photo")) {
-                    Text("Photo")
+                    if let image = uiImage {
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 300, height: 300)
+                            .padding()
+                            .onTapGesture {
+                                isShowPicker = true
+                            }
+                    }else {
+                        Image(systemName: "face.smiling")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 300, height: 300)
+                            .padding()
+                            .onTapGesture {
+                                isShowPicker = true
+                            }
+                    }
                 }
             }
             .navigationTitle("Add Journal Entry")
@@ -65,11 +87,14 @@ struct AddJournalEntryView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
                         let journalEntry = JournalEntry(rating: 3, entryTitle: entryTitle,
-                                                        entryBody: entryBody, latitude: currentLocation?.coordinate.latitude, longitude: currentLocation?.coordinate.longitude)
+                                                        entryBody: entryBody, photo: uiImage , latitude: currentLocation?.coordinate.latitude, longitude: currentLocation?.coordinate.longitude)
                         modelContext.insert(journalEntry)
                         dismiss()
                     }
                 }
+            }
+            .sheet(isPresented: $isShowPicker) {
+                ImagePicker(image: $uiImage)
             }
         }
     }
